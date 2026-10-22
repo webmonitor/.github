@@ -44,7 +44,3 @@
 欢迎分享监控场景、反馈问题，或通过 Pull Request 改进代码与文档。提交问题时，请附上复现步骤与脱敏后的页面示例。
 
 [反馈 WebMonitor 问题](https://github.com/webmonitor/WebMonitor/issues) · [反馈 Agent 问题](https://github.com/webmonitor/WebMonitor-Agent/issues)
-
----
-
-<p align="center"><sub>风物长宜放眼量</sub></p>
