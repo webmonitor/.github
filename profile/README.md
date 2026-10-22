@@ -5,42 +5,42 @@
 <h1 align="center">WebMonitor</h1>
 
 <p align="center">
-  <strong>关注变化，不必反复刷新。</strong><br />
-  网页内容监控 · 邮件通知 · 自托管
+  <strong>Follow changes. Skip the refresh.</strong><br />
+  Web content monitoring · Email alerts · Self-hosted
 </p>
 
 <p align="center">
-  <a href="https://webmonitor.qfpqhyl.top/">在线体验</a> ·
-  <a href="https://github.com/webmonitor/WebMonitor/blob/main/README.zh-CN.md">中文文档</a> ·
-  <a href="https://github.com/webmonitor/WebMonitor#readme">English</a>
+  <a href="https://webmonitor.qfpqhyl.top/">Live demo</a> ·
+  <a href="https://github.com/webmonitor/WebMonitor#readme">Documentation</a> ·
+  <a href="https://github.com/webmonitor/.github/blob/main/profile/README.zh-CN.md">简体中文</a>
 </p>
 
 ---
 
-公告更新、商品调价、页面内容变动——把你关心的网页交给 WebMonitor，在检测到变化时收到邮件提醒。
+Announcements, price changes, and page updates—let WebMonitor watch the pages you care about and notify you by email when it detects a change.
 
-## 选择你的监控方式
+## Choose how you monitor
 
 ### [WebMonitor](https://github.com/webmonitor/WebMonitor)
 
-**通过可视化面板，管理日常监控。**
+**Manage everyday monitoring from a visual dashboard.**
 
-用 XPath 指定要关注的页面区域，定时检查内容变化。支持邮件通知、公开任务与用户订阅，提供任务和日志管理、中英文界面及 Docker 部署。
+Target a specific page region with XPath and check it on a schedule. Includes email alerts, public tasks and subscriptions, task and log management, a bilingual interface, and Docker deployment.
 
-[部署与使用 →](https://github.com/webmonitor/WebMonitor/blob/main/README.zh-CN.md)
+[Deployment and usage →](https://github.com/webmonitor/WebMonitor#readme)
 
 ### [WebMonitor-Agent](https://github.com/webmonitor/WebMonitor-Agent)
 
-**用对话描述需求，确认后开始监控。**
+**Describe what matters. Preview it. Confirm and monitor.**
 
-从真实页面分析到配置草稿、内容提取与邮件预览，逐步确认监控内容。支持静态页面与浏览器渲染页面，保留变化事件、运行记录和采集证据。
+Create monitors through conversation, from real page analysis to configuration drafts, content extraction, and email previews. Supports static and browser-rendered pages, with change events, run history, and collected evidence.
 
-[了解 Agent →](https://github.com/webmonitor/WebMonitor-Agent#readme)
+[Explore the Agent →](https://github.com/webmonitor/WebMonitor-Agent#readme)
 
-> Agent 当前面向本地开发与验证；部署方式与数据保留限制请先阅读项目说明。
+> The Agent currently targets local development and evaluation. Read its project documentation for deployment requirements and data retention limitations.
 
-## 一起完善 WebMonitor
+## Build with us
 
-欢迎分享监控场景、反馈问题，或通过 Pull Request 改进代码与文档。提交问题时，请附上复现步骤与脱敏后的页面示例。
+Share a monitoring use case, report an issue, or contribute code and documentation through a pull request. For bug reports, include reproduction steps and a page example with sensitive information removed.
 
-[反馈 WebMonitor 问题](https://github.com/webmonitor/WebMonitor/issues) · [反馈 Agent 问题](https://github.com/webmonitor/WebMonitor-Agent/issues)
+[WebMonitor issues](https://github.com/webmonitor/WebMonitor/issues) · [Agent issues](https://github.com/webmonitor/WebMonitor-Agent/issues)
