@@ -1,42 +1,50 @@
-# webmonitor/.github — organization profile rewrite (left-aligned)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/webmonitor/.github/main/logo.png" width="88" height="88" alt="WebMonitor" />
+</p>
 
-<img src="./logo.png" width="72" alt="WebMonitor logo" />
+<h1 align="center">WebMonitor</h1>
 
-# WebMonitor
+<p align="center">
+  <strong>关注变化，不必反复刷新。</strong><br />
+  网页内容监控 · 邮件通知 · 自托管
+</p>
 
-开源网页内容监控平台。用 XPath 精准锁定页面区域，变化发生的第一时间邮件触达。
-AI 驱动，Docker 自托管，数据完全自有。
-
-[WebMonitor](https://github.com/webmonitor/WebMonitor) · [WebMonitor-Agent](https://github.com/webmonitor/WebMonitor-Agent) · [在线 Demo](https://webmonitor.qfpqhyl.top/)
-
-## 项目
-
-| 仓库 | 说明 |
-|---|---|
-| [WebMonitor](https://github.com/webmonitor/WebMonitor) | 核心平台：网页变化监控、邮件告警、可视化面板。Python · FastAPI · React · Selenium |
-| [WebMonitor-Agent](https://github.com/webmonitor/WebMonitor-Agent) | AI 监控引擎：对话式生成监控脚本，深度解析 React/Vue 动态页面 |
-
-## 特性
-
-- **精准监控** — XPath 定位页面任意区域，只监控你指定的那一块
-- **即时告警** — 变化发生即邮件通知，支持公开任务与用户订阅
-- **动静皆宜** — 静态页面与前端渲染的动态页面全覆盖
-- **AI 驱动** — 和 Agent 对话就能生成监控脚本，零代码接入
-- **开箱即用** — Docker 一键自托管，可视化任务/日志/用户管理
-
-## 快速开始
-
-```bash
-docker run -d -p 8000:8000 webmonitor/webmonitor
-```
-
-详见 [WebMonitor 文档](https://github.com/webmonitor/WebMonitor#readme)。
-
-## 参与贡献
-
-欢迎 Issue 与 PR。从克隆 [WebMonitor](https://github.com/webmonitor/WebMonitor) 开始，
-用一杯咖啡的时间监控你的第一个页面。
+<p align="center">
+  <a href="https://webmonitor.qfpqhyl.top/">在线体验</a> ·
+  <a href="https://github.com/webmonitor/WebMonitor/blob/main/README.zh-CN.md">中文文档</a> ·
+  <a href="https://github.com/webmonitor/WebMonitor#readme">English</a>
+</p>
 
 ---
 
-风物长宜放眼量 · Keep watching, keep forward.
+公告更新、商品调价、页面内容变动——把你关心的网页交给 WebMonitor，在检测到变化时收到邮件提醒。
+
+## 选择你的监控方式
+
+### [WebMonitor](https://github.com/webmonitor/WebMonitor)
+
+**通过可视化面板，管理日常监控。**
+
+用 XPath 指定要关注的页面区域，定时检查内容变化。支持邮件通知、公开任务与用户订阅，提供任务和日志管理、中英文界面及 Docker 部署。
+
+[部署与使用 →](https://github.com/webmonitor/WebMonitor/blob/main/README.zh-CN.md)
+
+### [WebMonitor-Agent](https://github.com/webmonitor/WebMonitor-Agent)
+
+**用对话描述需求，确认后开始监控。**
+
+从真实页面分析到配置草稿、内容提取与邮件预览，逐步确认监控内容。支持静态页面与浏览器渲染页面，保留变化事件、运行记录和采集证据。
+
+[了解 Agent →](https://github.com/webmonitor/WebMonitor-Agent#readme)
+
+> Agent 当前面向本地开发与验证；部署方式与数据保留限制请先阅读项目说明。
+
+## 一起完善 WebMonitor
+
+欢迎分享监控场景、反馈问题，或通过 Pull Request 改进代码与文档。提交问题时，请附上复现步骤与脱敏后的页面示例。
+
+[反馈 WebMonitor 问题](https://github.com/webmonitor/WebMonitor/issues) · [反馈 Agent 问题](https://github.com/webmonitor/WebMonitor-Agent/issues)
+
+---
+
+<p align="center"><sub>风物长宜放眼量</sub></p>
