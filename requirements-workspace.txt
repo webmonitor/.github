@@ -1,0 +1,53 @@
+# Shared host-side Python dependencies for the whole workspace:
+#   mocksite, WebMonitor-Agent, WebMonitor (legacy backend).
+#
+# This is the union of the three project manifests, so one conda environment
+# can run all of them. Each project pins only what it actually imports:
+#   mocksite/pyproject.toml          (web + tooling)
+#   WebMonitor-Agent/pyproject.toml  (agent runtime + tooling)
+#   WebMonitor/pyproject.toml        (legacy backend)
+#
+# No lock file anywhere: each project's requirements.txt is generated from its
+# pyproject.toml by `uv pip compile --group dev --generate-hashes`.
+#
+# Rule when adding a dependency: add it to the owning project's pyproject.toml
+# and, if it is not already covered, to this file. Versions must match.
+
+# --- shared web stack ---
+fastapi==0.142.2
+uvicorn[standard]==0.54.0
+pydantic==2.13.5
+pydantic-settings==2.15.0
+jinja2==3.1.6
+python-multipart==0.0.32
+email-validator==2.3.0
+httpx==0.28.1
+sqlalchemy[asyncio]==2.1.1
+
+# --- WebMonitor-Agent runtime ---
+asyncpg==0.31.0
+playwright==1.63.0
+boto3==1.43.107
+openai==3.23.0
+openai-agents==0.22.3
+mcp==2.2.0
+argon2-cffi==25.1.0
+beautifulsoup4==4.15.0
+lxml==6.1.3
+aiosmtplib==5.1.3
+nh3==0.3.7
+
+# --- WebMonitor legacy backend ---
+python-jose[cryptography]==3.5.0
+bcrypt==5.0.0
+python-dotenv==1.2.4
+selenium==4.51.0
+apscheduler==3.11.3
+
+# --- development tooling (mocksite, WebMonitor-Agent) ---
+pytest==9.1.1
+pytest-asyncio==1.4.0
+pytest-cov==7.1.0
+ruff==0.16.10
+mypy==1.20.2
+uv==0.12.13
