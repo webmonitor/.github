@@ -1,12 +1,13 @@
 # Shared development environment for every project in this workspace:
 # mocksite, WebMonitor-Agent, WebMonitor.
 #
-#   conda env create -f .github/environment.yml      # first time
-#   conda env update -f .github/environment.yml      # after dependency changes
+#   conda env create -f .github/env/environment.yml      # first time
+#   conda env update -f .github/env/environment.yml      # after dependency changes
 #   conda activate webmonitor
 #
 # Paths below are resolved relative to this file's directory, because conda
-# runs pip from there.
+# runs pip from there. This file lives in `.github/env/`, so the sibling
+# repositories are two levels up.
 #
 # Docker remains the pinned runtime for WebMonitor-Agent and mocksite; this
 # environment exists for host-side editing, linting and fast test runs.
@@ -20,5 +21,5 @@ dependencies:
       - -r requirements-workspace.txt
       # Editable workspace packages, so `import mocksite` and
       # `import webmonitor` work without setting PYTHONPATH.
-      - --editable ../mocksite
-      - --editable ../WebMonitor-Agent
+      - --editable ../../mocksite
+      - --editable ../../WebMonitor-Agent

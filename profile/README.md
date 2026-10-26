@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/webmonitor/.github/main/logo.png" width="88" height="88" alt="WebMonitor" />
+  <img src="https://raw.githubusercontent.com/webmonitor/.github/main/image/logo.png" width="88" height="88" alt="WebMonitor" />
 </p>
 
 <h1 align="center">WebMonitor</h1>
