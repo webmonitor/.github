@@ -5,60 +5,54 @@
 <h1 align="center">WebMonitor</h1>
 
 <p align="center">
-  <strong>Follow changes. Skip the refresh.</strong><br />
-  Web content monitoring · Email alerts · Self-hosted
+  Watch page changes and receive email alerts.<br />
+  Self-hosted · Docker images · English and Chinese
 </p>
 
 <p align="center">
+  <a href="https://webmonitor.github.io/en/">Website</a> ·
+  <a href="https://webmonitor.github.io/en/docs/">Documentation</a> ·
   <a href="https://webmonitor.qfpqhyl.top/">Live demo</a> ·
-  <a href="https://github.com/webmonitor/WebMonitor#readme">Documentation</a> ·
   <a href="https://github.com/webmonitor/.github/blob/main/profile/README.zh-CN.md">简体中文</a>
 </p>
 
----
+## Choose a project
 
-Announcements, price changes, and page updates—let WebMonitor watch the pages you care about and notify you by email when it detects a change.
+| Project | Monitoring setup | Deployment | License |
+| --- | --- | --- | --- |
+| [WebMonitor-Agent](https://github.com/webmonitor/WebMonitor-Agent) | Describe a page and notification conditions; review a real collection preview before confirming | One application image shared by API/worker and frontend services, plus supporting services | MIT |
+| [WebMonitor](https://github.com/webmonitor/WebMonitor) | Enter a URL, XPath and check interval; share tasks and subscribe within your instance | One container serves the UI and API | CC BY-NC 4.0 |
 
-## Choose how you monitor
+WebMonitor-Agent is the actively developed product. It supports HTTP and browser collection, text and numeric rules, list changes, page evidence and email delivery records. WebMonitor is the original dashboard, maintained for fixes, and requires no model service.
 
-### [WebMonitor](https://github.com/webmonitor/WebMonitor)
+## Public Docker images
 
-**Manage everyday monitoring from a visual dashboard.**
-
-Target a specific page region with XPath and check it on a schedule. Includes email alerts, public tasks and subscriptions, task and log management, a bilingual interface, and Docker deployment.
-
-[Deployment and usage →](https://github.com/webmonitor/WebMonitor#readme)
-
-### [WebMonitor-Agent](https://github.com/webmonitor/WebMonitor-Agent)
-
-**Describe what matters. Preview it. Confirm and monitor.**
-
-Create monitors through conversation, from real page analysis to configuration drafts, content extraction, and email previews. Supports static and browser-rendered pages, with change events, run history, and collected evidence. Ships as a single image for both the API/worker and the frontend.
-
-[Explore the Agent →](https://github.com/webmonitor/WebMonitor-Agent#readme)
-
-> The Agent currently targets local development and evaluation. Read its project documentation for deployment requirements and data retention limitations.
-
-## Run it
-
-Both projects publish multi-architecture images (`linux/amd64` and `linux/arm64`) to GitHub Container Registry on every release. Clone the repository for its Compose file and configuration, then point Compose at the released image:
+Both images are public on GitHub Container Registry. Anyone can pull them without a GitHub account or `docker login`. Docker selects `linux/amd64` or `linux/arm64` for your machine.
 
 ```sh
-# WebMonitor-Agent — one image, two services (api + web)
-echo "WEBMONITOR_IMAGE=ghcr.io/webmonitor/webmonitor-agent:1.0.0" >> .env
-docker compose -f compose.yaml -f compose.ghcr.yaml up -d --wait
+docker pull ghcr.io/webmonitor/webmonitor-agent:1.0.0
+docker pull ghcr.io/webmonitor/webmonitor:1.0.0
 ```
+
+Pulling only downloads the application. Deployment requires no repository clone: create an empty directory, download the deployment files listed in the project guide, and create your own `.env` from its inline template.
+
+- [Agent: install, configure and run](https://github.com/webmonitor/WebMonitor-Agent#readme) — model credentials, administrator credentials, PostgreSQL, S3-compatible storage and optional SMTP.
+- [WebMonitor: install, configure and run](https://github.com/webmonitor/WebMonitor#readme) — administrator credentials and signing key; configure email in the app.
+
+After downloading the required files and filling in your `.env`, both projects start with the same command from their own deployment directory:
 
 ```sh
-# WebMonitor
-echo "WEBMONITOR_IMAGE=ghcr.io/webmonitor/webmonitor:1.0.0" >> .env
-docker compose -f docker-compose.yml -f docker-compose.ghcr.yml up -d --wait
+docker compose up -d --wait
 ```
 
-Replace the version with the [latest release](https://github.com/webmonitor/WebMonitor-Agent/releases). Pulling anonymously requires the package to be public; otherwise `docker login ghcr.io` first. Plain `docker compose up` still builds from source.
+`compose.yaml` pulls `latest` by default. Set `WEBMONITOR_IMAGE` in `.env` to a version such as `1.0.0` for repeatable deployments. `latest` follows stable releases; `main` is a development build when available. See [Agent releases](https://github.com/webmonitor/WebMonitor-Agent/releases) and [WebMonitor releases](https://github.com/webmonitor/WebMonitor/releases) separately. Agent’s S3 and egress helper images still build locally from the downloaded deployment files. Developers use `compose.build.yaml` for source builds.
 
-## Build with us
+The supplied deployments need storage changes and backups for long-term use: Agent data services use temporary storage, and WebMonitor stores SQLite inside its container without a data volume. Read the project’s retention notes before restarting data services or replacing containers. The live demo is a separate WebMonitor instance and may be unavailable.
 
-Share a monitoring use case, report an issue, or contribute code and documentation through a pull request. For bug reports, include reproduction steps and a page example with sensitive information removed.
+## Development and feedback
 
-[WebMonitor issues](https://github.com/webmonitor/WebMonitor/issues) · [Agent issues](https://github.com/webmonitor/WebMonitor-Agent/issues)
+[Website source](https://github.com/webmonitor/webmonitor.github.io) contains the bilingual homepage and documentation. [mocksite](https://github.com/webmonitor/mocksite) provides a controllable notice page for collector development; it builds from source and has separate site and administration ports.
+
+Report issues in the relevant project with reproduction steps and a page example with sensitive data removed. Never include API keys, SMTP passwords, session cookies or real `.env` files.
+
+[Agent issues](https://github.com/webmonitor/WebMonitor-Agent/issues) · [WebMonitor issues](https://github.com/webmonitor/WebMonitor/issues)
