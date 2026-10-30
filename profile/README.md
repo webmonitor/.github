@@ -33,11 +33,29 @@ Target a specific page region with XPath and check it on a schedule. Includes em
 
 **Describe what matters. Preview it. Confirm and monitor.**
 
-Create monitors through conversation, from real page analysis to configuration drafts, content extraction, and email previews. Supports static and browser-rendered pages, with change events, run history, and collected evidence.
+Create monitors through conversation, from real page analysis to configuration drafts, content extraction, and email previews. Supports static and browser-rendered pages, with change events, run history, and collected evidence. Ships as a single image for both the API/worker and the frontend.
 
 [Explore the Agent →](https://github.com/webmonitor/WebMonitor-Agent#readme)
 
 > The Agent currently targets local development and evaluation. Read its project documentation for deployment requirements and data retention limitations.
+
+## Run it
+
+Both projects publish multi-architecture images (`linux/amd64` and `linux/arm64`) to GitHub Container Registry on every release. Clone the repository for its Compose file and configuration, then point Compose at the released image:
+
+```sh
+# WebMonitor-Agent — one image, two services (api + web)
+echo "WEBMONITOR_IMAGE=ghcr.io/webmonitor/webmonitor-agent:0.1.0" >> .env
+docker compose -f compose.yaml -f compose.ghcr.yaml up -d --wait
+```
+
+```sh
+# WebMonitor
+echo "WEBMONITOR_IMAGE=ghcr.io/webmonitor/webmonitor:1.0.0" >> .env
+docker compose -f docker-compose.yml -f docker-compose.ghcr.yml up -d --wait
+```
+
+Replace the version with the [latest release](https://github.com/webmonitor/WebMonitor-Agent/releases). Pulling anonymously requires the package to be public; otherwise `docker login ghcr.io` first. Plain `docker compose up` still builds from source.
 
 ## Build with us
 

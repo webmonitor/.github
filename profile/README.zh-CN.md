@@ -33,11 +33,29 @@
 
 **用对话描述需求，确认后开始监控。**
 
-从真实页面分析到配置草稿、内容提取与邮件预览，逐步确认监控内容。支持静态页面与浏览器渲染页面，保留变化事件、运行记录和采集证据。
+从真实页面分析到配置草稿、内容提取与邮件预览，逐步确认监控内容。支持静态页面与浏览器渲染页面，保留变化事件、运行记录和采集证据。API/后台进程与前端打包在同一个镜像里。
 
 [了解 Agent →](https://github.com/webmonitor/WebMonitor-Agent#readme)
 
 > Agent 当前面向本地开发与验证；部署方式与数据保留限制请先阅读项目说明。
+
+## 运行 WebMonitor
+
+两个项目在每次发布时都会把多架构镜像（`linux/amd64` 与 `linux/arm64`）推送到 GitHub Container Registry。克隆仓库取得 Compose 文件与配置，再让 Compose 使用发布镜像：
+
+```sh
+# WebMonitor-Agent —— 一个镜像，两个服务（api + web）
+echo "WEBMONITOR_IMAGE=ghcr.io/webmonitor/webmonitor-agent:0.1.0" >> .env
+docker compose -f compose.yaml -f compose.ghcr.yaml up -d --wait
+```
+
+```sh
+# WebMonitor
+echo "WEBMONITOR_IMAGE=ghcr.io/webmonitor/webmonitor:1.0.0" >> .env
+docker compose -f docker-compose.yml -f docker-compose.ghcr.yml up -d --wait
+```
+
+版本号换成[最新发布](https://github.com/webmonitor/WebMonitor-Agent/releases)。匿名拉取要求包已设为公开，否则先执行 `docker login ghcr.io`。直接 `docker compose up` 仍从源码构建。
 
 ## 一起完善 WebMonitor
 
