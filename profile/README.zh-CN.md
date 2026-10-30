@@ -45,7 +45,7 @@
 
 ```sh
 # WebMonitor-Agent —— 一个镜像，两个服务（api + web）
-echo "WEBMONITOR_IMAGE=ghcr.io/webmonitor/webmonitor-agent:0.1.0" >> .env
+echo "WEBMONITOR_IMAGE=ghcr.io/webmonitor/webmonitor-agent:1.0.0" >> .env
 docker compose -f compose.yaml -f compose.ghcr.yaml up -d --wait
 ```
 

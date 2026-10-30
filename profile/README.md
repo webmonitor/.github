@@ -45,7 +45,7 @@ Both projects publish multi-architecture images (`linux/amd64` and `linux/arm64`
 
 ```sh
 # WebMonitor-Agent — one image, two services (api + web)
-echo "WEBMONITOR_IMAGE=ghcr.io/webmonitor/webmonitor-agent:0.1.0" >> .env
+echo "WEBMONITOR_IMAGE=ghcr.io/webmonitor/webmonitor-agent:1.0.0" >> .env
 docker compose -f compose.yaml -f compose.ghcr.yaml up -d --wait
 ```
 
