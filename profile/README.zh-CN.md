@@ -51,4 +51,4 @@ docker compose up -d --wait
 
 反馈时请说明想监控什么、在哪一步遇到问题，以及界面中的提示。网页示例与截图请先脱敏，不要附带密码、API 密钥或真实 `.env` 文件。
 
-[WebMonitor-Agent](https://github.com/webmonitor/WebMonitor-Agent/blob/main/LICENSE) 与 [WebMonitor](https://github.com/webmonitor/WebMonitor/blob/main/LICENSE) 均采用 **CC BY-NC 4.0**：署名、附上许可链接并注明修改后，可分享与修改，仅限非商业用途。公开下载不代表允许商用。Agent 此前按 MIT 分发的副本仍保留原许可权利。
+[WebMonitor-Agent](https://github.com/webmonitor/WebMonitor-Agent/blob/main/LICENSE) 与 [WebMonitor](https://github.com/webmonitor/WebMonitor/blob/main/LICENSE) 均采用 **CC BY-NC 4.0**：署名、附上许可链接并注明修改后，可分享与修改，仅限非商业用途。
