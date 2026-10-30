@@ -26,9 +26,9 @@ Agent 支持价格阈值、关键词和列表新增等通知条件，还能查�
 
 ## 开始使用
 
-**管理员已经提供了访问地址？** 直接在浏览器打开并登录。Agent 的新成员需要管理员发放邀请链接，无需在自己电脑上安装。
+**管理员已经提供了访问地址？** 直接在浏览器打开并登录。Agent 的新成员使用管理员发放的邀请链接注册。
 
-**想自己部署？** 准备好 Docker，选择下面的安装指南。无需克隆仓库，也无需登录镜像仓库：下载所需文件，按模板创建自己的 `.env`，填好配置后启动。
+**想自己部署？** 准备好 Docker，选择下面的安装指南：下载所需文件，按模板创建自己的 `.env`，填好配置后启动。
 
 - [安装 Agent](https://github.com/webmonitor/WebMonitor-Agent/blob/main/README.zh-CN.md)：准备模型服务的地址、密钥和模型名称；需要邮件时再填写邮箱服务配置。
 - [安装 WebMonitor](https://github.com/webmonitor/WebMonitor/blob/main/README.zh-CN.md)：设置管理员账户和密钥，启动后在界面里添加邮件账户。
@@ -49,6 +49,6 @@ docker compose up -d --wait
 
 [阅读完整使用指南](https://webmonitor.github.io/docs/) · [反馈 Agent 问题](https://github.com/webmonitor/WebMonitor-Agent/issues) · [反馈 WebMonitor 问题](https://github.com/webmonitor/WebMonitor/issues)
 
-反馈时请说明想监控什么、在哪一步遇到问题，以及界面中的提示。网页示例与截图请先脱敏，不要附带密码、API 密钥或真实 `.env` 文件。
+反馈时请说明想监控什么、在哪一步遇到问题，以及界面中的提示。网页示例与截图请先移除凭据和个人信息。
 
 [WebMonitor-Agent](https://github.com/webmonitor/WebMonitor-Agent/blob/main/LICENSE) 与 [WebMonitor](https://github.com/webmonitor/WebMonitor/blob/main/LICENSE) 均采用 **CC BY-NC 4.0**：署名、附上许可链接并注明修改后，可分享与修改，仅限非商业用途。

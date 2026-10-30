@@ -26,9 +26,9 @@ Agent supports price thresholds, keywords and new list entries, with before/afte
 
 ## Start using WebMonitor
 
-**Already have an address from your administrator?** Open it in your browser and sign in. New Agent members need an invitation link from the administrator. You do not need to install anything locally.
+**Already have an address from your administrator?** Open it in your browser and sign in. New Agent members register using an invitation link from the administrator.
 
-**Want your own instance?** Prepare Docker and follow the matching installation guide below. No repository clone or registry login is required: download the listed files, create your own `.env` from the template, fill in your settings and start.
+**Want your own instance?** Prepare Docker and follow the installation guide below: download the listed files, create `.env` from the template, fill in your settings and start.
 
 - [Install Agent](https://github.com/webmonitor/WebMonitor-Agent#readme): prepare your model service URL, key and model name. Add mail service settings if you want email alerts.
 - [Install WebMonitor](https://github.com/webmonitor/WebMonitor#readme): choose administrator credentials and a signing key, then add an email account in the app after starting.
@@ -49,6 +49,6 @@ You can also explore the [WebMonitor live demo](https://webmonitor.qfpqhyl.top/)
 
 [Read the complete user guide](https://webmonitor.github.io/en/docs/) · [Report an Agent issue](https://github.com/webmonitor/WebMonitor-Agent/issues) · [Report a WebMonitor issue](https://github.com/webmonitor/WebMonitor/issues)
 
-Include what you wanted to monitor, the step that failed and the message shown in the app. Remove sensitive information from example pages and screenshots. Never attach passwords, API keys or real `.env` files.
+Include what you wanted to monitor, the step that failed and the message shown in the app. Share example pages and screenshots with credentials and personal information removed.
 
 Both [WebMonitor-Agent](https://github.com/webmonitor/WebMonitor-Agent/blob/main/LICENSE) and [WebMonitor](https://github.com/webmonitor/WebMonitor/blob/main/LICENSE) use **CC BY-NC 4.0**: share and adapt for non-commercial use with attribution, a license link and an indication of changes.
