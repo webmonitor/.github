@@ -51,4 +51,4 @@ You can also explore the [WebMonitor live demo](https://webmonitor.qfpqhyl.top/)
 
 Include what you wanted to monitor, the step that failed and the message shown in the app. Remove sensitive information from example pages and screenshots. Never attach passwords, API keys or real `.env` files.
 
-WebMonitor-Agent uses the [MIT license](https://github.com/webmonitor/WebMonitor-Agent/blob/main/LICENSE), allowing commercial use. WebMonitor uses [CC BY-NC 4.0](https://github.com/webmonitor/WebMonitor/blob/main/LICENSE), for non-commercial use only.
+Both [WebMonitor-Agent](https://github.com/webmonitor/WebMonitor-Agent/blob/main/LICENSE) and [WebMonitor](https://github.com/webmonitor/WebMonitor/blob/main/LICENSE) use **CC BY-NC 4.0**: share and adapt for non-commercial use with attribution, a license link and an indication of changes. Public downloads do not grant commercial-use permission. Agent copies previously distributed under MIT retain their original permissions.
